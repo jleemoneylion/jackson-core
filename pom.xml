@@ -142,6 +142,40 @@ com.fasterxml.jackson.core.*;version=${project.version}
         <groupId>de.jjohannes</groupId>
         <artifactId>gradle-module-metadata-maven-plugin</artifactId>
       </plugin>
+
+      <plugin>
+        <groupId>com.buschmais.jqassistant</groupId>
+        <artifactId>jqassistant-maven-plugin</artifactId>
+        <version>1.11.1</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>scan</goal>
+              <goal>analyze</goal>
+            </goals>
+            <configuration>
+              <concepts>
+                <concept>ood-metrics:AfferentCouplings</concept>
+                <concept>ood-metrics:EfferentCouplings</concept>
+                <concept>ood-metrics:Instability</concept>
+                <concept>ood-metrics:Distance</concept>
+                <concept>ood-metrics:Abstractness</concept>
+                <concept>ood-metrics:NumberClasses</concept>
+                <concept>ood-metrics:NumberAbstracts</concept>
+                <concept>ood-metrics:NormalizedDistance</concept>
+                <concept>visibility-metrics:RelativeVisibility</concept>
+              </concepts>
+            </configuration>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.jqassistant.contrib.plugin</groupId>
+            <artifactId>jqassistant-java-metrics-plugin</artifactId>
+            <version>1.8.0</version>
+          </dependency>
+        </dependencies>
+      </plugin>
     </plugins>
   </build>
 
